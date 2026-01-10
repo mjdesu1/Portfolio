@@ -166,30 +166,21 @@ const Content = () => {
             Beyond Coding
           </h3>
           <p className="text-sm text-gray-700 leading-relaxed">
-            When not writing code, I focus on learning about{" "}
+            When not writing code, I enjoy staying active and entertained. I'm
+            passionate about{" "}
             <span className="text-blue-600 hover:underline cursor-pointer">
-              emerging technologies
+              jogging
             </span>
             ,{" "}
             <span className="text-blue-600 hover:underline cursor-pointer">
-              minimalism
+              basketball
             </span>
             , and{" "}
             <span className="text-blue-600 hover:underline cursor-pointer">
-              startup culture
+              online gaming
             </span>
-            .
-          </p>
-          <p className="text-sm text-gray-700 leading-relaxed mt-3">
-            I share my knowledge through{" "}
-            <span className="text-blue-600 hover:underline cursor-pointer">
-              content creation
-            </span>{" "}
-            and{" "}
-            <span className="text-blue-600 hover:underline cursor-pointer">
-              community building
-            </span>
-            .
+            . These activities help me maintain a healthy work-life balance and
+            provide a great way to unwind and relax.
           </p>
         </div>
 

@@ -38,8 +38,8 @@ const Header = () => {
               Resume
               <FaAngleRight className="w-3 h-3" />
             </button>
-            <button className="h-8 lg:h-9 px-3 lg:px-4 border border-gray-300 text-gray-700 font-medium text-xs lg:text-sm rounded-lg hover:bg-gray-50 transition-colors flex items-center gap-2">
-              <IoIosSend className="w-3 h-3 lg:w-4 lg:h-4" />
+            <button className="h-8 lg:h-9 px-4 lg:px-4 border border-gray-300 text-gray-700 font-medium text-xs lg:text-sm rounded-lg hover:bg-gray-50 transition-colors flex items-center gap-2">
+              <IoIosSend className="w-6 h-3 lg:w-4 lg:h-4" />
               Send Email
             </button>
           </div>
