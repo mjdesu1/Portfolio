@@ -12,7 +12,7 @@ import { projects } from "../constants/projects";
 
 const Content = () => {
   return (
-    <div className="w-full h-auto mt-6 lg:mt-8 flex flex-col gap-5 lg:gap-6 pb-8">
+    <div className="w-full h-auto mt-6 lg:mt-8 flex flex-col gap-5 lg:gap-6 pb-8 xl:px-16">
       {/* Row 1: About + Experience Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6">
         {/* About Section - Left Column */}
@@ -60,7 +60,7 @@ const Content = () => {
 
             <div className="relative">
               {/* Timeline line */}
-              <div className="absolute left-[5px] top-2 bottom-2 w-[2px] bg-gray-200"></div>
+              <div className="absolute left-1.25 top-2 bottom-2 w-0.5 bg-gray-200"></div>
 
               {/* Timeline items */}
               <div className="space-y-4">
@@ -68,7 +68,7 @@ const Content = () => {
                   <div key={index} className="relative flex items-start gap-4">
                     {/* Timeline dot */}
                     <div
-                      className={`w-3 h-3 rounded-full z-10 flex-shrink-0 ${
+                      className={`w-3 h-3 rounded-full z-10 shrink-0 ${
                         exp.current ? "bg-black" : "bg-gray-300"
                       }`}
                     ></div>
@@ -83,7 +83,7 @@ const Content = () => {
                           {exp.companyName}
                         </p>
                       </div>
-                      <span className="text-xs font-medium text-gray-600 flex-shrink-0">
+                      <span className="text-xs font-medium text-gray-600 shrink-0">
                         {exp.date}
                       </span>
                     </div>

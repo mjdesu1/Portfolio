@@ -7,13 +7,13 @@ import { IoIosSend } from "react-icons/io";
 
 const Header = () => {
   return (
-    <header className="w-full h-auto flex justify-between items-center pt-8 lg:pt-12">
+    <header className="w-full h-auto flex justify-between items-center pt-8 lg:pt-12 xl:px-16">
       <div className="flex gap-4 lg:gap-6">
         <div>
           <img
             src={ProfileImage}
             alt="Profile"
-            className="w-40 h-36 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-lg object-cover"
+            className="w-40 h-36 sm:w-24 sm:h-24 lg:w-28 lg:h-28 xl:w-38 xl:h-38 rounded-lg object-cover"
           />
         </div>
 

@@ -5,7 +5,7 @@ import { Switch } from "@headlessui/react";
 const ToggleMode = () => {
   const [enabled, setEnabled] = useState(false);
   return (
-    <div className="absolute right-3 md:right-24 lg:right-52 top-6">
+    <div className="absolute right-3 md:right-24 lg:right-52 xl:right-130 top-6">
       <Switch
         checked={enabled}
         onChange={setEnabled}
