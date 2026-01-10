@@ -9,6 +9,15 @@ import {
   otherStacks,
 } from "../constants/stacks";
 import { projects } from "../constants/projects";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { galleryData } from "@/constants/gallery";
+import { HiOutlinePhotograph } from "react-icons/hi";
 
 const Content = () => {
   return (
@@ -213,6 +222,47 @@ const Content = () => {
                 </span>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Row 4: Gallery Section */}
+      <div className="border border-gray-200 py-5 px-5 rounded-xl">
+        <h3 className="text-md font-semibold flex items-center gap-2 mb-4">
+          <HiOutlinePhotograph className="w-4 h-4 text-gray-600" />
+          Gallery
+        </h3>
+
+        <div className="relative">
+          <Carousel
+            opts={{
+              align: "start",
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {galleryData.map((item, index) => (
+                <CarouselItem
+                  key={index}
+                  className="pl-2 md:pl-4 basis-full md:basis-1/3 lg:basis-1/5"
+                >
+                  <div className="overflow-hidden rounded-lg aspect-4/5">
+                    <img
+                      src={item.imgSrc}
+                      alt="Gallery item"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex -left-4 lg:-left-5 bg-white border border-gray-200 shadow-md hover:bg-gray-50" />
+            <CarouselNext className="hidden md:flex -right-4 lg:-right-5 bg-white border border-gray-200 shadow-md hover:bg-gray-50" />
+          </Carousel>
+
+          {/* Mobile navigation dots or swipe indicator */}
+          <div className="flex justify-center mt-4 md:hidden">
+            <p className="text-xs text-gray-500">Swipe to see more →</p>
           </div>
         </div>
       </div>

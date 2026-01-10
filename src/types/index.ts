@@ -27,3 +27,8 @@ export interface Projects {
   link: string;
   domainName: string;
 }
+
+export interface GalleryItem {
+  id: number;
+  imgSrc: string;
+}
