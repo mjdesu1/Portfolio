@@ -4,6 +4,7 @@ import { ReactComponent as Location } from "../assets/svg/location.svg";
 import { IoNewspaperOutline } from "react-icons/io5";
 import { FaAngleRight } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
+import { personalLinks } from "../constants/personal";
 
 const Header = () => {
   return (
@@ -34,15 +35,23 @@ const Header = () => {
             </h4>
           </div>
           <div className="flex mt-3 gap-2">
-            <button className="h-8 lg:h-9 px-3 lg:px-4 bg-black dark:bg-white text-white dark:text-black font-medium text-xs lg:text-sm rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors flex items-center gap-2">
+            <a
+              href={personalLinks.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-8 lg:h-9 px-3 lg:px-4 bg-black dark:bg-white text-white dark:text-black font-medium text-xs lg:text-sm rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors flex items-center gap-2"
+            >
               <IoNewspaperOutline className="w-3 h-3 lg:w-4 lg:h-4" />
               Resume
               <FaAngleRight className="w-3 h-3" />
-            </button>
-            <button className="h-8 lg:h-9 px-4 lg:px-4 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium text-xs lg:text-sm rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex items-center gap-2">
+            </a>
+            <a
+              href={personalLinks.email}
+              className="h-8 lg:h-9 px-4 lg:px-4 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium text-xs lg:text-sm rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex items-center gap-2"
+            >
               <IoIosSend className="w-6 h-3 lg:w-4 lg:h-4" />
               Send Email
-            </button>
+            </a>
           </div>
         </div>
       </div>
