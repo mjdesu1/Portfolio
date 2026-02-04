@@ -1,4 +1,6 @@
+import { useState } from "react";
 import ProfileImage from "../assets/images/profile.png";
+import ProfileImageHover from "../assets/images/profile1.png";
 import { ReactComponent as VerifiedCheck } from "../assets/svg/verified-check.svg";
 import { ReactComponent as Location } from "../assets/svg/location.svg";
 import { IoNewspaperOutline } from "react-icons/io5";
@@ -7,14 +9,29 @@ import { IoIosSend } from "react-icons/io";
 import { personalLinks } from "../constants/personal";
 
 const Header = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <header className="w-full h-auto flex justify-between items-center pt-8 lg:pt-12">
       <div className="flex gap-4 lg:gap-6">
-        <div>
+        <div
+          className="relative w-40 h-36 sm:w-24 sm:h-24 lg:w-28 lg:h-28 xl:w-38 xl:h-38"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onTouchStart={() => setIsHovered(true)}
+          onTouchEnd={() => setIsHovered(false)}
+        >
           <img
             src={ProfileImage}
             alt="Profile"
-            className="w-40 h-36 sm:w-24 sm:h-24 lg:w-28 lg:h-28 xl:w-38 xl:h-38 rounded-lg object-cover"
+            className={`absolute inset-0 w-full h-full rounded-lg object-cover transition-opacity duration-300 ${isHovered ? "opacity-0" : "opacity-100"
+              }`}
+          />
+          <img
+            src={ProfileImageHover}
+            alt="Profile Hover"
+            className={`absolute inset-0 w-full h-full rounded-lg object-cover transition-opacity duration-300 ${isHovered ? "opacity-100" : "opacity-0"
+              }`}
           />
         </div>
 
