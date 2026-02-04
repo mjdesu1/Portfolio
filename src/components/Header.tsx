@@ -7,6 +7,7 @@ import { IoNewspaperOutline } from "react-icons/io5";
 import { FaAngleRight } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 import { personalLinks } from "../constants/personal";
+import AchievementButton from "./AchievementButton";
 
 const Header = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -70,10 +71,12 @@ const Header = () => {
               <IoIosSend className="w-5 h-5" />
               Send Email
             </a>
+            <AchievementButton />
           </div>
         </div>
       </div>
     </header>
+
   );
 };
 
