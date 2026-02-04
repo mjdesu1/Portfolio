@@ -12,14 +12,14 @@ const AchievementButton = () => {
     const achievement = achievementsData[0]; // Focusing on Agri-IGNITE
 
     return (
-        <div className="relative inline-block w-full sm:w-auto">
+        <div className="relative inline-block">
             {/* Primary Achievement Button */}
             <button
                 onClick={() => {
                     setIsOpen(!isOpen);
                     if (isOpen) setIsMediaOpen(false);
                 }}
-                className="h-9 lg:h-10 px-3 lg:px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-[11px] lg:text-xs rounded-xl transition-all flex items-center gap-2 shadow-sm group relative overflow-hidden shrink-0"
+                className="h-9 lg:h-10 px-4 lg:px-5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs lg:text-sm rounded-xl transition-all flex items-center gap-2 shadow-sm group relative overflow-hidden"
             >
                 <div className="flex items-center gap-1.5 z-10">
                     <HiOutlineTrophy className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
@@ -43,7 +43,7 @@ const AchievementButton = () => {
                         initial={{ opacity: 0, y: 10, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                        className="absolute top-full right-0 sm:left-0 mt-3 w-full sm:w-[320px] bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl shadow-2xl z-50 overflow-hidden backdrop-blur-md p-5"
+                        className="absolute top-full left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 mt-3 w-[280px] sm:w-[340px] bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl shadow-2xl z-50 overflow-hidden backdrop-blur-md p-5"
                     >
                         <div className="flex flex-col gap-4">
                             {/* Achievement Header */}
@@ -54,10 +54,10 @@ const AchievementButton = () => {
                                         {achievement.title}
                                     </h4>
                                     <div className="flex items-center gap-2 mt-1">
-                                        <span className="text-[10px] font-bold bg-blue-500/10 text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded-full">
+                                        <span className="text-[10px] font-bold bg-blue-500/10 text-blue-600 dark:text-blue-400 px-2.5 py-0.5 rounded-full whitespace-nowrap">
                                             {achievement.tag}
                                         </span>
-                                        <p className="text-[11px] font-semibold text-gray-500 dark:text-gray-400">
+                                        <p className="text-[11px] font-semibold text-gray-500 dark:text-gray-400 whitespace-nowrap">
                                             {achievement.subtitle}
                                         </p>
                                     </div>
