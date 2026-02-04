@@ -8,7 +8,7 @@ import { personalLinks } from "../constants/personal";
 
 const Header = () => {
   return (
-    <header className="w-full h-auto flex justify-between items-center pt-8 lg:pt-12 xl:px-16">
+    <header className="w-full h-auto flex justify-between items-center pt-8 lg:pt-12">
       <div className="flex gap-4 lg:gap-6">
         <div>
           <img
@@ -21,12 +21,12 @@ const Header = () => {
         <div className="flex flex-col gap-1">
           <div className="flex flex-col gap-1">
             <h3 className="text-lg lg:text-2xl font-bold flex items-center gap-2 text-gray-900 dark:text-white">
-              Rogel Gerodiaz
+              Michael Joshua B. Paloa
               <VerifiedCheck className="w-4 h-4 lg:w-5 lg:h-5" />
             </h3>
             <h5 className="text-xs lg:text-sm text-gray-600 dark:text-gray-400 flex items-center gap-1">
-              <Location className="w-4 h-4" />
-              Metro Manila, Philippines
+              <Location className="w-3.5 h-3.5 mt-0.5" />
+              Libertad Bunawan ADS, Philippines
             </h5>
             <h4 className="text-xs lg:text-sm font-medium text-gray-800 dark:text-gray-300 mt-1">
               Front-end Developer{" "}

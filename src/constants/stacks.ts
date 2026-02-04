@@ -16,7 +16,13 @@ export const frontEndStacks: frontEndSkills[] = [
     name: "React",
   },
   {
-    name: "Vue.js",
+    name: "Vite.js",
+  },
+  {
+    name: "Expo",
+  },
+  {
+    name: "MUI",
   },
   {
     name: "Tailwind CSS",
@@ -28,7 +34,7 @@ export const backEndStacks: backEndSkills[] = [
     name: "Node.js",
   },
   {
-    name: "PHP",
+    name: "Supabase",
   },
   {
     name: "MongoDB",
@@ -49,7 +55,7 @@ export const otherStacks: otherSkills[] = [
     name: "Git",
   },
   {
-    name: "AWS",
+    name: "Vercel",
   },
   {
     name: "Github Actions",

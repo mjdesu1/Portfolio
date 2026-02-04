@@ -1,4 +1,5 @@
-import { HiOutlineBriefcase } from "react-icons/hi2";
+import { useState } from "react";
+import { HiOutlineBriefcase, HiOutlineXMark } from "react-icons/hi2";
 import { experienceData } from "../constants/experience";
 import { HiOutlineBeaker } from "react-icons/hi";
 import { HiOutlineFolderOpen } from "react-icons/hi";
@@ -20,10 +21,13 @@ import {
 import { galleryData } from "@/constants/gallery";
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { socialLinks } from "../constants/socials";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Content = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
-    <div className="w-full h-auto mt-6 lg:mt-8 flex flex-col gap-5 lg:gap-6 pb-8 xl:px-16">
+    <div className="w-full h-auto mt-6 lg:mt-8 flex flex-col gap-5 lg:gap-6 pb-8">
       {/* Row 1: About + Experience Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6">
         {/* About Section - Left Column */}
@@ -36,26 +40,19 @@ const Content = () => {
 
             <div className="flex flex-col gap-3 mt-4">
               <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                I am a BSIT graduate and a passionate Web Developer who enjoys
-                building modern, resposive, and use-focused web applications and
-                websites. I have hands-on experience working with Vue.js, React,
-                Node.js, TypeScript, and modern web technologies, and I
-                continuously strive to improve my skills by exploring new tools,
-                frameworks, and best practices in web development.
+                I am a <span className="text-gray-900 dark:text-white font-bold">BSIT undergraduate</span> and a <span className="text-gray-900 dark:text-white font-bold">passionate Web Developer</span> who enjoys
+                building <span className="text-gray-900 dark:text-white font-bold">modern, responsive, and user-focused</span> web applications and
+                websites. I have hands-on experience working with <span className="text-gray-900 dark:text-white font-bold">Vite, React, Node.js, TypeScript</span>, and modern web technologies. I actively leverage <span className="text-gray-900 dark:text-white font-bold">AI tools</span> as the new generation of development to stay efficient and ahead of the curve.
               </p>
 
               <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                During my college years, I actively parcipated in website and
-                web design competitions, where i honed my problem-solving
-                skills, creativity and teamwork, while also pushing me to write
-                clean, efficient, and maintainable code.
+                During my college years, I actively participated in website and
+                web design competitions, including <span className="text-gray-900 dark:text-white font-bold">ATI</span> and various school-based projects.
+                Despite being an undergraduate, I have already gained <span className="text-gray-900 dark:text-white font-bold">extensive working experience</span> in real-world jobs, honing my problem-solving skills and technical expertise.
               </p>
 
               <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                I am driven by a strong passion for learning, building
-                meaningful projects, and turning ideas into functional digital
-                experiences. My goal is to grow as developer while contributing
-                to impactful projects that solve real world problems.
+                I am known as a <span className="text-gray-900 dark:text-white font-bold">fast worker</span> who is deeply dedicated to every project. I am the type of developer who <span className="text-gray-900 dark:text-white font-bold italic underline decoration-gray-900/20 dark:decoration-white/20 underline-offset-4">won't sleep</span> until the task is complete and every target is met. My goal is to grow while contributing to <span className="text-gray-900 dark:text-white font-bold">impactful projects</span> that solve real-world problems.
               </p>
             </div>
           </div>
@@ -216,7 +213,7 @@ const Content = () => {
               </span>
               ,{" "}
               <span className="text-blue-600 dark:text-blue-400 hover:underline cursor-pointer">
-                basketball
+                cycling
               </span>
               , and{" "}
               <span className="text-blue-600 dark:text-blue-400 hover:underline cursor-pointer">
@@ -240,21 +237,27 @@ const Content = () => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {projects.slice(0, 4).map((project, index) => (
-                <div
+              {projects.slice(0, 6).map((project, index) => (
+                <a
                   key={index}
-                  className="border border-gray-200 dark:border-gray-700 rounded-lg p-3 hover:border-gray-300 dark:hover:border-gray-600 hover:shadow-sm transition-all cursor-pointer bg-white dark:bg-gray-800"
+                  href={project.link !== "#" ? project.link : undefined}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`border border-gray-200 dark:border-gray-700 rounded-lg p-3 hover:border-gray-300 dark:hover:border-gray-600 hover:shadow-sm transition-all bg-white dark:bg-gray-800 flex flex-col justify-between ${project.link !== "#" ? "cursor-pointer" : "cursor-default opacity-80"
+                    }`}
                 >
-                  <h4 className="font-semibold text-sm text-gray-900 dark:text-white">
-                    {project.title}
-                  </h4>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 mt-1 line-clamp-2">
-                    {project.description}
-                  </p>
-                  <span className="inline-block mt-2 bg-gray-100 dark:bg-gray-700 px-2 py-1 text-xs rounded text-gray-700 dark:text-gray-300">
+                  <div>
+                    <h4 className="font-semibold text-sm text-gray-900 dark:text-white">
+                      {project.title}
+                    </h4>
+                    <p className="text-xs text-gray-600 dark:text-gray-400 mt-1 line-clamp-2">
+                      {project.description}
+                    </p>
+                  </div>
+                  <span className="inline-block mt-2 bg-gray-100 dark:bg-gray-700 px-2 py-1 text-[10px] rounded text-gray-700 dark:text-gray-300 w-fit">
                     {project.domainName}
                   </span>
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -281,12 +284,18 @@ const Content = () => {
                   key={index}
                   className="pl-2 md:pl-4 basis-full md:basis-1/3 lg:basis-1/5"
                 >
-                  <div className="overflow-hidden rounded-lg aspect-4/5">
+                  <div
+                    className="overflow-hidden rounded-lg aspect-4/5 cursor-pointer group relative"
+                    onClick={() => setSelectedImage(item.imgSrc)}
+                  >
                     <img
                       src={item.imgSrc}
                       alt="Gallery item"
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="text-white text-xs font-bold uppercase tracking-widest bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-sm">View Full</span>
+                    </div>
                   </div>
                 </CarouselItem>
               ))}
@@ -303,6 +312,42 @@ const Content = () => {
           </div>
         </div>
       </div>
+
+      {/* Lightbox / Full Screen Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 md:p-10"
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.button
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.5, opacity: 0 }}
+              className="absolute top-6 right-6 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors z-[101]"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedImage(null);
+              }}
+            >
+              <HiOutlineXMark className="w-8 h-8" />
+            </motion.button>
+
+            <motion.img
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              src={selectedImage}
+              alt="Full view"
+              className="max-w-full max-h-full object-contain rounded-xl shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
