@@ -38,20 +38,20 @@ const Content = () => {
               About
             </h3>
 
-            <div className="flex flex-col gap-3 mt-4">
-              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+            <div className="flex flex-col gap-4 mt-5">
+              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
                 I am a <span className="text-gray-900 dark:text-white font-bold">BSIT undergraduate</span> and a <span className="text-gray-900 dark:text-white font-bold">passionate Web Developer</span> who enjoys
                 building <span className="text-gray-900 dark:text-white font-bold">modern, responsive, and user-focused</span> web applications and
                 websites. I have hands-on experience working with <span className="text-gray-900 dark:text-white font-bold">Vite, React, Node.js, TypeScript</span>, and modern web technologies. I actively leverage <span className="text-gray-900 dark:text-white font-bold">AI tools</span> as the new generation of development to stay efficient and ahead of the curve.
               </p>
 
-              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
                 During my college years, I actively participated in website and
                 web design competitions, including <span className="text-gray-900 dark:text-white font-bold">ATI</span> and various school-based projects.
                 Despite being an undergraduate, I have already gained <span className="text-gray-900 dark:text-white font-bold">extensive working experience</span> in real-world jobs, honing my problem-solving skills and technical expertise.
               </p>
 
-              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
                 I am known as a <span className="text-gray-900 dark:text-white font-bold">fast worker</span> who is deeply dedicated to every project. I am the type of developer who <span className="text-gray-900 dark:text-white font-bold italic underline decoration-gray-900/20 dark:decoration-white/20 underline-offset-4">won't sleep</span> until the task is complete and every target is met. My goal is to grow while contributing to <span className="text-gray-900 dark:text-white font-bold">impactful projects</span> that solve real-world problems.
               </p>
             </div>

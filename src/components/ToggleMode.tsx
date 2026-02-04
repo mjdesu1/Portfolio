@@ -7,7 +7,7 @@ const ToggleMode = () => {
   const isDark = theme === "dark";
 
   return (
-    <div className="absolute right-6 sm:right-10 lg:right-16 top-8 lg:top-12">
+    <div className="absolute right-4 sm:right-10 lg:right-16 top-4 sm:top-8 lg:top-12 z-50">
       <Switch
         checked={isDark}
         onChange={() => setTheme(isDark ? "light" : "dark")}
